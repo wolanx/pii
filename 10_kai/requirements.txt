@@ -1,0 +1,11 @@
+# pip install xxx -i https://pypi.tuna.tsinghua.edu.cn/simple
+# export ALL_PROXY=http://127.0.0.1:7890
+
+jupyterlab
+tensorflow
+matplotlib
+numpy
+
+# pip install torch torchvision torchaudio
+
+
