@@ -18,42 +18,33 @@ dataset1 = torchvision.datasets.MNIST(root="../../data", train=True, download=Fa
 train_loader: DataLoader = torch.utils.data.DataLoader(dataset1, batch_size=64, shuffle=True)
 
 
-class MyModel(nn.Module):
+class MyModel2(nn.Module):  # e1 86% e5 92%
     def __init__(self) -> None:
-        super(MyModel, self).__init__()
-        self.conv1 = nn.Conv2d(1, 32, (3, 3), (1, 1))
-        self.conv2 = nn.Conv2d(32, 64, (3, 3), (1, 1))
-        self.dropout1 = nn.Dropout(.25)
-        self.dropout2 = nn.Dropout(.5)
-        self.fc1 = nn.Linear(9216, 128)
-        self.fc2 = nn.Linear(128, 10)
+        super().__init__()
+        self.fc1 = nn.Linear(784, 200)
+        self.fc2 = nn.Linear(200, 200)
+        self.fc3 = nn.Linear(200, 10)
 
-    def forward(self, x):
-        x = self.conv1(x)
-        x = F.relu(x)
-        x = self.conv2(x)
-        x = F.relu(x)
+    def forward(self, x):  # 64, 1, 28, 28 第一个 64 是 batch_size
+        x = torch.flatten(x, 1)  # 728
+        x = self.fc1(x)  # 200
+        x = self.fc2(x)  # 200
+        x = self.fc3(x)  # 10
 
-        x = F.max_pool2d(x, 2)
-        # x = self.dropout1(x)
-        x = torch.flatten(x, 1)
-        x = self.fc1(x)
-        x = F.relu(x)
-        # x = self.dropout2(x)
-        x = self.fc2(x)
-
-        ret = F.log_softmax(x, dim=1)
-        return ret
+        x = F.log_softmax(x, dim=1)  # 10
+        return x
 
 
 data, target = train_loader.dataset[0]
 
-model: nn.Module = MyModel()
+print(data.size(), target)
+
+model: nn.Module = MyModel2()
 model.load_state_dict(torch.load('mnist.pth'))
 model.eval()
 
-with torch.no_grad():
-    ret = model(data)
-    print(ret)
-
-print()
+for i in range(50):
+    data, target = train_loader.dataset[i]
+    output = model(data)
+    pred = torch.argmax(output, dim=1, keepdim=False)
+    print(target, pred.item())
