@@ -8,4 +8,5 @@ numpy
 
 # pip install torch torchvision torchaudio
 
+torchsummary
 
