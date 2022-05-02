@@ -7,6 +7,7 @@ matplotlib
 numpy
 
 # pip install torch torchvision torchaudio
-
 torchsummary
 
+# view
+gradio
