@@ -1,6 +1,12 @@
+"""
+torchvision 实现
+    https://github.com/pytorch/vision/blob/main/torchvision/models/resnet.py
+    torchvision.models.resnet18(pretrained=True)
+"""
 import gradio as gr
 import torch
 import torch.nn.functional as F
+import torchvision.models
 from torchvision import transforms
 
 torch.hub.download_url_to_file(
@@ -11,8 +17,8 @@ torch.hub.download_url_to_file(
     "https://github.com/pytorch/hub/raw/master/images/dog.jpg", "dog.jpg"
 )
 
-# https://github.com/pytorch/vision/blob/main/torchvision/models/resnet.py
-model = torch.hub.load("pytorch/vision:v0.10.0", "resnet18", pretrained=True)
+# model = torch.hub.load("pytorch/vision:v0.10.0", "resnet18", pretrained=True)  # hub 上拿模型
+model = torchvision.models.resnet18(pretrained=True)  # vision 上拿模型
 model.eval()
 
 
