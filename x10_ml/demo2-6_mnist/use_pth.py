@@ -13,7 +13,7 @@ transform = transforms.Compose([
     transforms.Normalize((0.1307,), (0.3081,))
     # transforms.Normalize(mean=(0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5))  # 归一化到(0,1) 分布到(-1,1)
 ])
-dataset1 = torchvision.datasets.MNIST(root="../../data", train=True, download=False, transform=transform)
+dataset1 = torchvision.datasets.MNIST(root="../../datasets", train=True, download=False, transform=transform)
 
 train_loader: DataLoader = torch.utils.data.DataLoader(dataset1, batch_size=64, shuffle=True)
 
