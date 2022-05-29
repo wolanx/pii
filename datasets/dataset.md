@@ -80,4 +80,12 @@ ImageSets
 JPEGImages 17152张jpg
 SegmentationClass 同一类一个色，两个人一个色
 SegmentationObject 同一类不同对象不同色，两个人两个色
+
+// G:/conda/envs/py39/lib/site-packages/torchvision/datasets/voc.py:18
+"2012": {
+    "url": "http://host.robots.ox.ac.uk/pascal/VOC/voc2012/VOCtrainval_11-May-2012.tar",
+    "filename": "VOCtrainval_11-May-2012.tar",
+    "md5": "6cd6e144f989b92b3379bac3b3de84fd",
+    "base_dir": os.path.join("VOCdevkit", "VOC2012"),
+},
 ```

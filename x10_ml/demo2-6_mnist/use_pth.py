@@ -45,6 +45,7 @@ model.eval()
 
 for i in range(50):
     data, target = train_loader.dataset[i]
+    print(data.shape)
     output = model(data)
     pred = torch.argmax(output, dim=1, keepdim=False)
     print(target, pred.item())
