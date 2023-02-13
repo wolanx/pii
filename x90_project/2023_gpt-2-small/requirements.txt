@@ -1,0 +1,6 @@
+numpy # used for the actual model code/weights
+regex # used by the bpe tokenizer
+requests # used to download gpt-2 files from openai
+tensorflow==2.11.0 # used to load the gpt-2 weights from the open-ai tf checkpoint
+tqdm # progress bar to keep your sanity
+fire # easy CLI creation
