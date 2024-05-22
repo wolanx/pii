@@ -1,5 +1,0 @@
-BaseplateUnbalance: 1
-Misaligned: 2
-Bearing: 3
-ImpellerUnbalance: 4
-Cavitation: 5
