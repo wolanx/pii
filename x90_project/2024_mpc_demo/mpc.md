@@ -1,0 +1,32 @@
+# doc 2024-11
+
+- 性能优化：空调能耗节能的强化学习探索之路 https://xie.infoq.cn/article/5528257a6ebc9184b21c5d27c
+    - DQN
+- 水系统空调机组AI模型自动调节优化控制 https://zhuanlan.zhihu.com/p/717892457
+    - MPC
+    - ML-MPC
+- 模型预测控制简介（model predictive control） https://zhuanlan.zhihu.com/p/99409532
+    - 最优控制 => 这个时域
+    - 贪婪控制 => 只看现在
+    - MPC => 考虑未来的有限时间域
+- 基于learning的模型预测控制 https://zhuanlan.zhihu.com/p/147193427
+    - 一些文章
+- AA 203: Optimal and Learning-Based Control https://stanfordasl.github.io/aa203/sp2324/
+    - 斯坦福
+    - nans astrobee
+    - 19 个 pdf
+- 模型预测控制与机器学习 https://blog.csdn.net/baidu_39332177/article/details/128492029
+    - Learning-based MPC
+- MPC PyTorch https://locuslab.github.io/mpc.pytorch/
+    - https://github.com/locuslab/mpc.pytorch
+    - Example: Time-Varying Linear Control
+    - Example: Pendulum Control
+- gym
+    - RL v1 https://gymnasium.farama.org/
+    - 雅达利 https://ale.farama.org/environments/
+- 优秀论文
+    - 基于 MPC 的混合动力汽车能量管理策略 - 北京交通大学
+        - pdf https://jdxb.bjtu.edu.cn/CN/article/downloadArticleFile.do?attachType=PDF&id=3892
+    - Optimal Control of District Cooling Energy Plant with Reinforcement Learning and MPC
+        - semanticscholar https://www.semanticscholar.org/paper/Optimal-Control-of-District-Cooling-Energy-Plant-Guo-Chaudhari/6a83d54f41b585d5d37ba253ca114423db07699e
+        - pdf https://arxiv.org/pdf/2310.03814
